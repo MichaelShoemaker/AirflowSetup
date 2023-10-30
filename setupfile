@@ -1,5 +1,7 @@
 #!/bin/bash
 
+mkdir -p ./dags ./logs ./plugins ./config
+echo -e "AIRFLOW_UID=$(id -u)" > .env
 
 sudo apt-get update -y
 
@@ -24,5 +26,3 @@ sudo usermod -aG docker $USER
 
 newgrp docker
 
-mkdir -p ./dags ./logs ./plugins ./config
-echo -e "AIRFLOW_UID=$(id -u)" > .env
